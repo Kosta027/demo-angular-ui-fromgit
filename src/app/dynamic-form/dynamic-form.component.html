@@ -1,0 +1,17 @@
+<button (click) = "getUserFormStructure()">User Form</button>
+<button (click) = "getCarDriverFormStructure()">Car Driver Form</button>
+<br>
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <div *ngFor="let control of formStructure">
+    <label>{{control.label}}: </label>
+    <input [type]="control.type" [formControlName]="control.name">
+    <span *ngIf="dynamicForm.controls[control.name]?.invalid && dynamicForm.controls[control.name]?.touched">
+      {{getErrorMessage(control)}}
+    </span>
+  </div>
+  <button
+  *ngIf="submitButtonaShow"
+   type="submit"
+   [disabled]="dynamicForm.invalid"
+   (click)="onSubmit()">Submit</button>
+</form>

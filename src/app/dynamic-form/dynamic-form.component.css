@@ -1,0 +1,21 @@
+form {
+  padding-right: 10%;
+}
+
+input {
+  width: 70em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+span {
+  color: red;
+}
+
+button {
+  margin: 10px;
+}
